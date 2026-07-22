@@ -42,3 +42,46 @@
     color:#555;
     line-height:1.7;
 }
+/* ===========================
+   WHY CHOOSE ME
+=========================== */
+
+.why{
+    padding:80px 8%;
+    background:#ffffff;
+    text-align:center;
+}
+
+.why h2{
+    font-size:36px;
+    color:#0b3d91;
+    margin-bottom:50px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.why-card{
+    background:#f8fbff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+}
+
+.why-card h3{
+    color:#0b3d91;
+    margin-bottom:15px;
+}
+
+.why-card p{
+    color:#555;
+    line-height:1.7;
+}
