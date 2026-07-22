@@ -176,3 +176,18 @@ Add Google Map Section
     margin-top:15px;
     color:#0b3d91;
 }
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    background:#0b3d91;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+.footer p{
+    margin:0;
+    font-size:16px;
+}
