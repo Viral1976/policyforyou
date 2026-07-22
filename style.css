@@ -85,3 +85,47 @@
     color:#555;
     line-height:1.7;
 }
+/* CONTACT */
+
+.contact{
+    padding:80px 8%;
+    background:#0b3d91;
+    color:#fff;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:36px;
+    margin-bottom:30px;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-box p{
+    margin:15px 0;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.contact .btn-primary,
+.contact .btn-secondary{
+    display:inline-block;
+    margin:20px 10px 0;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact .btn-primary{
+    background:#FFD700;
+    color:#0b3d91;
+}
+
+.contact .btn-secondary{
+    background:#25D366;
+    color:#fff;
+}
