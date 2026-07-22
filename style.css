@@ -150,3 +150,28 @@
     box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 Add Google Map Section
+/* Customer Reviews */
+
+.reviews{
+    padding:80px 8%;
+    background:#ffffff;
+    text-align:center;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.review-card{
+    background:#f8fbff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.review-card h4{
+    margin-top:15px;
+    color:#0b3d91;
+}
