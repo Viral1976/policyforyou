@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viral1976.github.io/policyforyou/sitemap.xml
