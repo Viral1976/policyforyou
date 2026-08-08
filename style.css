@@ -1,188 +1,606 @@
-.services{
-    padding:80px 8%;
-    background:#f8fbff;
-    text-align:center;
+/* =========================================================
+   PolicyForYou.in
+   Professional Insurance Advisor Website
+   Viral Upadhyay
+   ========================================================= */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.services h2{
-    font-size:36px;
-    color:#0b3d91;
-    margin-bottom:50px;
+html {
+    scroll-behavior: smooth;
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.7;
+    color: #222;
+    background: #ffffff;
 }
 
-.service-card{
-    background:#fff;
-    padding:35px 25px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.3s;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.service-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+a {
+    text-decoration: none;
 }
 
-.service-card h3{
-    color:#0b3d91;
-    margin-bottom:15px;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.service-card p{
-    color:#555;
-    line-height:1.7;
+
+/* =========================================================
+   HEADER / NAVIGATION
+   ========================================================= */
+
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-/* ===========================
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo,
+.logo a {
+    color: #0b3d91;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav ul li a {
+    color: #222;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0b3d91;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 5%;
+    min-height: 620px;
+
+    background:
+        radial-gradient(circle at 85% 20%, rgba(11, 61, 145, 0.12), transparent 30%),
+        linear-gradient(135deg, #f5f9ff 0%, #ffffff 55%, #eef6ff 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(11, 61, 145, 0.06);
+    right: -100px;
+    top: -100px;
+}
+
+.hero > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-text .tagline,
+.hero .tagline {
+    color: #0b3d91;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    color: #0b3d91;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    color: #222;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+
+/* ---------- HERO BUTTONS ---------- */
+
+.hero-buttons,
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.btn,
+.btn-primary,
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 12px 24px;
+
+    border-radius: 8px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #0b3d91;
+    color: #ffffff;
+    border: 2px solid #0b3d91;
+}
+
+.btn-primary:hover {
+    background: #082f70;
+    border-color: #082f70;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+    border: 2px solid #25d366;
+}
+
+.btn-whatsapp:hover {
+    background: #1da851;
+    border-color: #1da851;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: min(100%, 430px);
+    max-height: 520px;
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    border: 7px solid #ffffff;
+
+    box-shadow:
+        0 20px 55px rgba(11, 61, 145, 0.20);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about {
+    padding: 90px 5%;
+    background: #ffffff;
+}
+
+.about .container {
+    max-width: 1000px;
+}
+
+.about h2 {
+    text-align: center;
+    color: #0b3d91;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.about p {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    color: #555;
+    font-size: 17px;
+    text-align: center;
+}
+
+.about strong {
+    color: #0b3d91;
+}
+
+
+/* =========================================================
    WHY CHOOSE ME
-=========================== */
+   ========================================================= */
 
-.why{
-    padding:80px 8%;
-    background:#ffffff;
-    text-align:center;
+.why-choose,
+.why-choose-us {
+    padding: 90px 5%;
+    background: #f7faff;
 }
 
-.why h2{
-    font-size:36px;
-    color:#0b3d91;
-    margin-bottom:50px;
+.why-choose h2,
+.why-choose-us h2 {
+    text-align: center;
+    color: #0b3d91;
+    font-size: 40px;
+    margin-bottom: 50px;
 }
 
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.why-grid,
+.why-choose-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-.why-card{
-    background:#f8fbff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    transition:.3s;
+.why-card {
+    background: #ffffff;
+    padding: 32px 22px;
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s ease;
 }
 
-.why-card:hover{
-    transform:translateY(-8px);
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(11, 61, 145, 0.13);
 }
 
-.why-card h3{
-    color:#0b3d91;
-    margin-bottom:15px;
+.why-card h3 {
+    color: #0b3d91;
+    margin-bottom: 12px;
 }
 
-.why-card p{
-    color:#555;
-    line-height:1.7;
-}
-/* CONTACT */
-
-.contact{
-    padding:80px 8%;
-    background:#0b3d91;
-    color:#fff;
-    text-align:center;
+.why-card p {
+    color: #666;
 }
 
-.contact h2{
-    font-size:36px;
-    margin-bottom:30px;
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+    padding: 90px 8%;
+    background: #ffffff;
+    text-align: center;
 }
 
-.contact-box{
-    max-width:700px;
-    margin:auto;
+.services h2 {
+    font-size: 40px;
+    color: #0b3d91;
+    margin-bottom: 50px;
 }
 
-.contact-box p{
-    margin:15px 0;
-    font-size:18px;
-    line-height:1.8;
+.service-grid,
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.contact .btn-primary,
-.contact .btn-secondary{
-    display:inline-block;
-    margin:20px 10px 0;
-    padding:12px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
+.service-card {
+    background: #ffffff;
+    padding: 35px 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5ebf5;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s ease;
 }
 
-.contact .btn-primary{
-    background:#FFD700;
-    color:#0b3d91;
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(11, 61, 145, 0.13);
 }
 
-.contact .btn-secondary{
-    background:#25D366;
-    color:#fff;
+.service-card h3 {
+    color: #0b3d91;
+    font-size: 22px;
+    margin-bottom: 14px;
 }
-/* ===========================
+
+.service-card p {
+    color: #666;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact {
+    padding: 90px 5%;
+    background:
+        linear-gradient(135deg, #0b3d91, #174fa8);
+    color: #ffffff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.contact p {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-size: 17px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* =========================================================
    GOOGLE MAP
-=========================== */
+   ========================================================= */
 
-.map{
-    padding:80px 8%;
-    background:#f8fbff;
-    text-align:center;
+.map-section {
+    padding: 70px 5%;
+    background: #f7faff;
 }
 
-.map h2{
-    color:#0b3d91;
-    margin-bottom:30px;
-    font-size:36px;
+.map-section h2 {
+    text-align: center;
+    color: #0b3d91;
+    margin-bottom: 30px;
 }
 
-.map iframe{
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-Add Google Map Section
-/* Customer Reviews */
-
-.reviews{
-    padding:80px 8%;
-    background:#ffffff;
-    text-align:center;
+.map-section iframe {
+    width: 100%;
+    min-height: 350px;
+    border: 0;
+    border-radius: 15px;
 }
 
-.review-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
 
-.review-card{
-    background:#f8fbff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.review-card h4{
-    margin-top:15px;
-    color:#0b3d91;
-}
-/* ==========================
+/* =========================================================
    FOOTER
-========================== */
+   ========================================================= */
 
-.footer{
-    background:#0b3d91;
-    color:#fff;
-    text-align:center;
-    padding:20px;
+footer {
+    background: #071d3d;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
 }
 
-.footer p{
-    margin:0;
-    font-size:16px;
+footer p {
+    margin: 5px 0;
+    color: #dce7f7;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #25d366;
+}
+
+
+/* =========================================================
+   GENERAL SECTION HEADINGS
+   ========================================================= */
+
+section h2 {
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .why-grid,
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo,
+    .logo a {
+        font-size: 21px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        width: 90%;
+        max-height: 430px;
+    }
+
+    .about,
+    .services,
+    .why-choose,
+    .why-choose-us,
+    .contact {
+        padding: 65px 20px;
+    }
+
+    .about h2,
+    .services h2,
+    .why-choose h2,
+    .why-choose-us h2,
+    .contact h2 {
+        font-size: 32px;
+    }
+
+    .why-grid,
+    .why-choose-grid,
+    .service-grid,
+    .services-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-whatsapp {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #25d366;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+   ========================================================= */
+
+.hero-image img {
+    min-height: 250px;
 }
