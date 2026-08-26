@@ -647,58 +647,280 @@ button:focus-visible {
 
 .inquiry-container h2 {
     text-align: center;
-    color: #0b3d91;
-    font-size: 36px;
-    margin-bottom: 10px;
+  /* =====================================================
+   BLUE + GOLD INSURANCE INQUIRY FORM
+   ===================================================== */
+
+.inquiry-section {
+    padding: 80px 5%;
+    background:
+        linear-gradient(135deg, #f7faff 0%, #ffffff 50%, #f3f7ff 100%);
+    position: relative;
 }
+
+.inquiry-container {
+    max-width: 760px;
+    margin: auto;
+    padding: 45px 50px;
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    border-top: 5px solid #d4a017;
+
+    box-shadow:
+        0 15px 45px rgba(11, 61, 145, 0.15);
+
+    position: relative;
+}
+
+/* Gold decorative line */
+
+.inquiry-container::before {
+    content: "";
+    position: absolute;
+
+    width: 100px;
+    height: 4px;
+
+    background: #d4a017;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+}
+
+
+/* Heading */
+
+.inquiry-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 8px;
+}
+
+.inquiry-heading h2 {
+    margin: 0;
+
+    color: #0b3d91;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.inquiry-line {
+    width: 55px;
+    height: 2px;
+
+    background: #d4a017;
+}
+
+
+/* Subtitle */
 
 .inquiry-subtitle {
     text-align: center;
+
     color: #555;
-    margin-bottom: 30px;
+
+    font-size: 17px;
+
+    margin: 0 0 35px;
 }
 
+
+/* Form row */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* Form group */
+
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-group label {
     display: block;
-    font-weight: 600;
-    color: #173f7a;
+
     margin-bottom: 8px;
+
+    color: #0b3d91;
+
+    font-size: 16px;
+
+    font-weight: 700;
 }
+
+
+/* Inputs */
 
 .form-group input,
 .form-group select,
 .form-group textarea {
+
     width: 100%;
-    padding: 13px 15px;
-    border: 1px solid #d5dbea;
-    border-radius: 10px;
-    font-size: 16px;
+
     box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d6dce8;
+
+    border-radius: 10px;
+
+    background: #fbfcff;
+
+    color: #222;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    transition: all 0.3s ease;
 }
+
+
+/* Focus */
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
+
     outline: none;
+
     border-color: #0b3d91;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 61, 145, 0.10);
 }
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 110px;
+}
+
+
+/* WhatsApp Button */
 
 .inquiry-btn {
+
     width: 100%;
-    padding: 15px;
+
+    padding: 16px 20px;
+
     border: none;
+
     border-radius: 10px;
-    background: #168b3b;
-    color: white;
-    font-size: 17px;
+
+    background:
+        linear-gradient(135deg, #0b3d91, #174fa8);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
     font-weight: 700;
+
     cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(11, 61, 145, 0.25);
+
+    transition: all 0.3s ease;
 }
 
+
+/* Button hover */
+
 .inquiry-btn:hover {
-    background: #0f6f2e;
+
+    background:
+        linear-gradient(135deg, #d4a017, #b8860b);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(212, 160, 23, 0.30);
+}
+
+
+/* Security note */
+
+.inquiry-note {
+
+    margin: 20px 0 0;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .inquiry-section {
+        padding: 55px 18px;
+    }
+
+    .inquiry-container {
+        padding: 35px 22px;
+    }
+
+    .inquiry-heading {
+        gap: 8px;
+    }
+
+    .inquiry-heading h2 {
+        font-size: 28px;
+    }
+
+    .inquiry-line {
+        width: 30px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .inquiry-btn {
+        font-size: 16px;
+    }
 }
