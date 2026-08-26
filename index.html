@@ -166,7 +166,59 @@
         </div>
 
     </div>
+<!-- ================= INQUIRY FORM ================= -->
 
+<section id="inquiry" class="inquiry-section">
+
+    <div class="inquiry-container">
+
+        <h2>Insurance Inquiry</h2>
+
+        <p class="inquiry-subtitle">
+            Get a free consultation for Life & Health Insurance
+        </p>
+
+        <form onsubmit="sendInquiryWhatsApp(); return false;">
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="inquiryName"
+                       placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="inquiryMobile"
+                       placeholder="Enter mobile number"
+                       pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Insurance Type</label>
+                <select id="insuranceType" required>
+                    <option value="">Select Insurance Type</option>
+                    <option value="Life Insurance">Life Insurance</option>
+                    <option value="Health Insurance">Health Insurance</option>
+                    <option value="Life & Health Insurance">Life & Health Insurance</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your Requirement</label>
+                <textarea id="inquiryMessage"
+                          placeholder="Tell me about your insurance requirement"
+                          rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="inquiry-btn">
+                💬 Send Inquiry on WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 </section>
 <!-- Contact -->
 <section id="contact" class="contact">
