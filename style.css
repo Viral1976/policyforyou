@@ -612,3 +612,20 @@ button:focus-visible {
 .hero-image img {
     min-height: 250px;
 }
+/* FINAL CONTACT LINK COLOR FIX */
+.contact a,
+.contact p a,
+.contact-buttons a,
+.contact a[href^="tel:"],
+.contact a[href^="mailto:"],
+.contact a[href*="wa.me"] {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.contact a:hover,
+.contact p a:hover,
+.contact-buttons a:hover {
+    color: #ffd700 !important;
+}
