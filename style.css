@@ -629,3 +629,76 @@ button:focus-visible {
 .contact-buttons a:hover {
     color: #ffd700 !important;
 }
+/* ================= INQUIRY FORM ================= */
+
+.inquiry-section {
+    padding: 80px 5%;
+    background: #f5f8ff;
+}
+
+.inquiry-container {
+    max-width: 650px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.inquiry-container h2 {
+    text-align: center;
+    color: #0b3d91;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.inquiry-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #173f7a;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d5dbea;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0b3d91;
+}
+
+.inquiry-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #168b3b;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inquiry-btn:hover {
+    background: #0f6f2e;
+}
