@@ -166,61 +166,111 @@
         </div>
 
     </div>
-<!-- ================= INQUIRY FORM ================= -->
-
 <section id="inquiry" class="inquiry-section">
 
-    <div class="inquiry-container">
+  <div class="inquiry-card">
 
-        <h2>Insurance Inquiry</h2>
-
-        <p class="inquiry-subtitle">
-            Get a free consultation for Life & Health Insurance
-        </p>
-
-        <form onsubmit="sendInquiryWhatsApp(); return false;">
-
-            <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" id="inquiryName"
-                       placeholder="Enter your name" required>
-            </div>
-
-            <div class="form-group">
-                <label>Mobile Number</label>
-                <input type="tel" id="inquiryMobile"
-                       placeholder="Enter mobile number"
-                       pattern="[0-9]{10}" required>
-            </div>
-
-            <div class="form-group">
-                <label>Insurance Type</label>
-                <select id="insuranceType" required>
-                    <option value="">Select Insurance Type</option>
-                    <option value="Life Insurance">Life Insurance</option>
-                    <option value="Health Insurance">Health Insurance</option>
-                    <option value="Life & Health Insurance">Life & Health Insurance</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Your Requirement</label>
-                <textarea id="inquiryMessage"
-                          placeholder="Tell me about your insurance requirement"
-                          rows="4"></textarea>
-            </div>
-
-            <button type="submit" class="inquiry-btn">
-                💬 Send Inquiry on WhatsApp
-            </button>
-
-        </form>
-
+    <div class="inquiry-heading">
+      <span class="gold-line"></span>
+      <h2>Insurance Inquiry</h2>
+      <p>Get a Free Consultation for Life & Health Insurance</p>
     </div>
 
-</section>
-</section>
-<!-- Contact -->
+    <form id="inquiryForm"
+          onsubmit="event.preventDefault(); sendInquiryToWhatsApp();">
+
+      <div class="inquiry-grid">
+
+        <div class="form-group">
+          <label for="inqName">👤 Name</label>
+          <input type="text"
+                 id="inqName"
+                 placeholder="Enter your name"
+                 required>
+        </div>
+
+        <div class="form-group">
+          <label for="inqMobile">📱 Mobile Number</label>
+          <input type="tel"
+                 id="inqMobile"
+                 inputmode="numeric"
+                 maxlength="10"
+                 placeholder="Enter 10 digit mobile number"
+                 required>
+        </div>
+
+        <div class="form-group">
+          <label for="inqType">🛡️ Insurance Type</label>
+          <select id="inqType" required>
+            <option value="">Select Insurance Type</option>
+            <option value="Life">Life Insurance</option>
+            <option value="Health">Health Insurance</option>
+            <option value="Both">Life + Health</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inqCompany">🏢 Preferred Company</label>
+          <select id="inqCompany" required disabled>
+            <option value="">First Select Insurance Type</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inqPlan">📋 Preferred Plan / Product</label>
+          <select id="inqPlan" required disabled>
+            <option value="">First Select Company</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inqCoverage">💰 Coverage / Requirement</label>
+          <input type="text"
+                 id="inqCoverage"
+                 placeholder="e.g. ₹50 Lakh / Family ₹10 Lakh">
+        </div>
+
+        <div class="form-group full-width">
+
+          <div id="planBenefits" class="plan-benefits">
+
+            <div class="benefits-title">
+              ✨ Plan Benefits
+            </div>
+
+            <p class="benefits-placeholder">
+              Select a Company & Plan to see key benefits.
+            </p>
+
+            <ul id="benefitsList"></ul>
+
+          </div>
+
+        </div>
+
+        <div class="form-group full-width">
+          <label for="inqMessage">📝 Message</label>
+
+          <textarea id="inqMessage"
+                    rows="4"
+                    placeholder="Tell me about your insurance requirement"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="inquiry-btn">
+        🟢 Send Inquiry on WhatsApp
+      </button>
+
+      <p class="form-note">
+        Your inquiry will open WhatsApp with the details filled in.
+      </p>
+
+    </form>
+
+  </div>
+
+</section><!-- Contact -->
 <section id="contact" class="contact">
 
     <div class="container">
