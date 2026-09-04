@@ -36,6 +36,192 @@ a {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+   /* ================================
+   PROFESSIONAL INQUIRY FORM
+================================ */
+
+.inquiry-section {
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #0b3d91 0%, #174fa8 100%);
+}
+
+.inquiry-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 42px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.20);
+  border-top: 5px solid #f5b400;
+}
+
+.inquiry-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gold-line {
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #f5b400;
+  border-radius: 20px;
+  margin: 0 auto 14px;
+}
+
+.inquiry-heading h2 {
+  margin: 0;
+  color: #173f7a;
+  font-size: 36px;
+}
+
+.inquiry-heading p {
+  margin: 8px 0 0;
+  color: #5c667a;
+  font-size: 16px;
+}
+
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: #173f7a;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d7dfec;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #fbfdff;
+  color: #173f7a;
+  font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #8a94a6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f5b400;
+  box-shadow: 0 0 0 3px rgba(245,180,0,0.12);
+}
+
+.form-group select:disabled {
+  background: #eef2f7;
+  color: #8993a5;
+  cursor: not-allowed;
+}
+
+/* PLAN BENEFITS */
+
+.plan-benefits {
+  background: linear-gradient(135deg, #fffaf0, #ffffff);
+  border: 1px solid #f5b400;
+  border-left: 5px solid #f5b400;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.benefits-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #173f7a;
+  margin-bottom: 6px;
+}
+
+.benefits-placeholder {
+  margin: 0;
+  color: #777f8c;
+}
+
+#benefitsList {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  color: #334155;
+}
+
+#benefitsList li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* WHATSAPP BUTTON */
+
+.inquiry-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #168b3b;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.inquiry-btn:hover {
+  background: #0f6f2e;
+  transform: translateY(-1px);
+}
+
+.form-note {
+  text-align: center;
+  color: #7a8392;
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .inquiry-section {
+    padding: 55px 4%;
+  }
+
+  .inquiry-card {
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .inquiry-heading h2 {
+    font-size: 30px;
+  }
+
+  .inquiry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+}
 }
 
 
