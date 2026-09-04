@@ -26,3 +26,26 @@ function sendInquiryWhatsApp() {
 
     window.open(whatsappURL, "_blank");
 }
+/* ==========================================
+   INSURANCE INQUIRY - COMPANY / PLAN / BENEFITS
+========================================== */
+
+const planData = {
+
+  "LIC": {
+
+    "Digi Term": [
+      "Pure term protection",
+      "Level or Increasing Sum Assured option",
+      "High Sum Assured rebate",
+      "Special rates for eligible customers"
+    ],
+
+    "New Tech-Term": [
+      "Level or Increasing Sum Assured",
+      "Single, Regular or Limited premium options",
+      "Flexible policy term options",
+      "Life protection for family"
+    ],
+
+    "
