@@ -527,3 +527,271 @@ const planData = {
     ],
 
     "
+document.addEventListener("DOMContentLoaded", function () {
+
+    const type = document.getElementById("inqType");
+    const company = document.getElementById("inqCompany");
+    const plan = document.getElementById("inqPlan");
+    const benefits = document.getElementById("benefitsList");
+
+    if (!type || !company || !plan) {
+        return;
+    }
+
+    const data = {
+
+        Life: {
+            "LIC": [
+                "LIC's Digi Term",
+                "LIC's New Tech-Term",
+                "LIC's New Jeevan Amar",
+                "LIC's Saral Jeevan Bima",
+                "LIC's Bima Kavach"
+            ],
+            "Edelweiss Life Insurance": [
+                "Zindagi Protect Plus",
+                "Assured Income STAR",
+                "Guaranteed Flexi STAR",
+                "Premier Guaranteed STAR"
+            ]
+        },
+
+        Health: {
+            "Niva Bupa Health Insurance": [
+                "ReAssure 3.0",
+                "Aspire",
+                "Rise"
+            ]
+        },
+
+        Both: {
+            "LIC": [
+                "LIC's Digi Term",
+                "LIC's New Tech-Term",
+                "LIC's New Jeevan Amar"
+            ],
+            "Edelweiss Life Insurance": [
+                "Zindagi Protect Plus",
+                "Assured Income STAR",
+                "Guaranteed Flexi STAR"
+            ],
+            "Niva Bupa Health Insurance": [
+                "ReAssure 3.0",
+                "Aspire",
+                "Rise"
+            ]
+        }
+    };
+
+    const benefitsData = {
+
+        "LIC's Digi Term": [
+            "Term life protection",
+            "High life cover options",
+            "Flexible policy term"
+        ],
+
+        "LIC's New Tech-Term": [
+            "Level or increasing sum assured options",
+            "Regular or limited premium options",
+            "Flexible policy term"
+        ],
+
+        "LIC's New Jeevan Amar": [
+            "Family life protection",
+            "Level or increasing sum assured",
+            "Flexible premium payment options"
+        ],
+
+        "LIC's Saral Jeevan Bima": [
+            "Simple term life protection",
+            "Flexible premium options",
+            "Family financial protection"
+        ],
+
+        "LIC's Bima Kavach": [
+            "Pure risk protection",
+            "Multiple death benefit options",
+            "Flexible premium payment options"
+        ],
+
+        "Zindagi Protect Plus": [
+            "Term life protection",
+            "Long-term protection options",
+            "Flexible payment choices"
+        ],
+
+        "Assured Income STAR": [
+            "Guaranteed income options",
+            "Life protection",
+            "Long-term financial planning"
+        ],
+
+        "Guaranteed Flexi STAR": [
+            "Guaranteed benefit options",
+            "Flexible premium choices",
+            "Life protection"
+        ],
+
+        "Premier Guaranteed STAR": [
+            "Guaranteed income or maturity benefit",
+            "Life cover",
+            "Flexible policy options"
+        ],
+
+        "ReAssure 3.0": [
+            "Unlimited sum insured option",
+            "Restoration benefits",
+            "Worldwide treatment option"
+        ],
+
+        "Aspire": [
+            "Age-lock premium feature",
+            "Maternity benefits",
+            "Restoration benefits"
+        ],
+
+        "Rise": [
+            "Flexible premium options",
+            "Health coverage options",
+            "Digital consultation benefits"
+        ]
+    };
+
+
+    function resetSelect(select, text) {
+        select.innerHTML = "";
+        const option = document.createElement("option");
+        option.value = "";
+        option.textContent = text;
+        select.appendChild(option);
+    }
+
+
+    type.addEventListener("change", function () {
+
+        resetSelect(company, "Select Company");
+        resetSelect(plan, "Select Plan / Product");
+
+        company.disabled = true;
+        plan.disabled = true;
+
+        if (!this.value) {
+            resetSelect(company, "First Select Insurance Type");
+            return;
+        }
+
+        Object.keys(data[this.value]).forEach(function (name) {
+
+            const option = document.createElement("option");
+
+            option.value = name;
+            option.textContent = name;
+
+            company.appendChild(option);
+        });
+
+        company.disabled = false;
+    });
+
+
+    company.addEventListener("change", function () {
+
+        resetSelect(plan, "Select Plan / Product");
+
+        plan.disabled = true;
+
+        if (!this.value || !type.value) {
+            return;
+        }
+
+        data[type.value][this.value].forEach(function (item) {
+
+            const option = document.createElement("option");
+
+            option.value = item;
+            option.textContent = item;
+
+            plan.appendChild(option);
+        });
+
+        plan.disabled = false;
+    });
+
+
+    plan.addEventListener("change", function () {
+
+        benefits.innerHTML = "";
+
+        const selectedPlan = this.value;
+
+        if (!selectedPlan) {
+            const li = document.createElement("li");
+            li.textContent = "Select a Plan to see key benefits.";
+            benefits.appendChild(li);
+            return;
+        }
+
+        const list = benefitsData[selectedPlan] || [
+            "Please contact Viral Upadhyay for detailed plan benefits."
+        ];
+
+        list.forEach(function (item) {
+
+            const li = document.createElement("li");
+
+            li.textContent = "✓ " + item;
+
+            benefits.appendChild(li);
+        });
+    });
+
+
+    window.sendInquiryToWhatsApp = function () {
+
+        const name = document.getElementById("inqName").value.trim();
+        const mobile = document.getElementById("inqMobile").value.trim();
+        const insuranceType = document.getElementById("inqType").value;
+        const selectedCompany = company.value;
+        const selectedPlan = plan.value;
+        const coverage = document.getElementById("inqCoverage").value.trim();
+        const message = document.getElementById("inqMessage").value.trim();
+
+        if (!name || !mobile || !insuranceType || !selectedCompany || !selectedPlan) {
+            alert("Please fill Name, Mobile, Insurance Type, Company and Plan.");
+            return;
+        }
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
+        if (typeof gtag === "function") {
+            gtag("event", "generate_lead", {
+                method: "WhatsApp",
+                insurance_type: insuranceType,
+                company: selectedCompany,
+                plan: selectedPlan
+            });
+        }
+
+        const text =
+            "🛡️ NEW INSURANCE INQUIRY\n\n" +
+            "👤 Name: " + name + "\n" +
+            "📱 Mobile: " + mobile + "\n" +
+            "🛡️ Insurance Type: " + insuranceType + "\n" +
+            "🏢 Company: " + selectedCompany + "\n" +
+            "📋 Plan: " + selectedPlan + "\n" +
+            "💰 Coverage / Requirement: " + (coverage || "Not specified") + "\n" +
+            "📝 Message: " + (message || "Not specified") + "\n\n" +
+            "📌 From PolicyForYou.in Website";
+
+        const url =
+            "https://wa.me/918511169616?text=" +
+            encodeURIComponent(text);
+
+        window.open(url, "_blank");
+    };
+
+});
