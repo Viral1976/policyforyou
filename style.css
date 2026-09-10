@@ -1110,3 +1110,174 @@ button:focus-visible {
         font-size: 16px;
     }
 }
+/* =====================================================
+   FINAL INQUIRY FORM - BLUE + GOLD
+===================================================== */
+
+.inquiry-section {
+    padding: 80px 5%;
+    background: #f4f7fc;
+}
+
+.inquiry-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 24px;
+    border-top: 5px solid #d4a017;
+    box-shadow: 0 15px 45px rgba(11, 61, 145, 0.15);
+}
+
+.inquiry-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.inquiry-heading h2 {
+    margin: 0;
+    color: #0b3d91;
+    font-size: 38px;
+}
+
+.inquiry-heading p {
+    margin: 8px 0 0;
+    color: #555;
+    font-size: 17px;
+}
+
+.gold-line {
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 0 auto 15px;
+    background: #d4a017;
+    border-radius: 10px;
+}
+
+.inquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0b3d91;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #d6dce8;
+    border-radius: 10px;
+    background: #fbfcff;
+    color: #222;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4a017;
+    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.12);
+}
+
+.form-group select:disabled {
+    background: #eef1f6;
+    color: #8b94a3;
+}
+
+.plan-benefits {
+    padding: 20px;
+    border: 1px solid #d4a017;
+    border-left: 5px solid #d4a017;
+    border-radius: 12px;
+    background: #fffaf0;
+}
+
+.benefits-title {
+    color: #0b3d91;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.benefits-placeholder {
+    color: #666;
+    margin: 0;
+}
+
+#benefitsList {
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+#benefitsList li {
+    margin: 7px 0;
+    color: #333;
+}
+
+.inquiry-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #168b3b;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.inquiry-btn:hover {
+    background: #0f6f2e;
+    transform: translateY(-2px);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 12px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+    .inquiry-section {
+        padding: 55px 18px;
+    }
+
+    .inquiry-card {
+        padding: 28px 20px;
+    }
+
+    .inquiry-heading h2 {
+        font-size: 30px;
+    }
+
+    .inquiry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+}
